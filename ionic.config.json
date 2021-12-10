@@ -1,0 +1,7 @@
+{
+  "name": "beginSthNew",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
