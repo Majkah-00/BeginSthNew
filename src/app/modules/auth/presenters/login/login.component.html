@@ -1,0 +1,31 @@
+<header>
+  <h1 class="login--title">Zaloguj się</h1>
+</header>
+
+<form [formGroup]="form">
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input formControlName="email" type="email" matInput />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Hasło</mat-label>
+    <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" />
+    <button
+      mat-icon-button
+      matSuffix
+      (click)="hide = !hide"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide"
+    >
+      <ion-icon [name]="hide ? 'eye-off' : 'eye'"></ion-icon>
+    </button>
+  </mat-form-field>
+
+  <div class="login__form__row">
+    <mat-checkbox>Zapamiętaj mnie</mat-checkbox>
+    <p class="create-account" [routerLink]="'/auth/register'">Stwórz konto</p>
+  </div>
+
+  <button class="button button--rounded button--outline button--white" (click)="onLogin()" [routerLink]="'/job-offers'">Zaloguj się</button>
+</form>

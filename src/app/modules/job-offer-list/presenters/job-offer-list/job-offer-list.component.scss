@@ -1,0 +1,50 @@
+@import 'src/app/shared/utilities/variables';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.job-offer__tile {
+  background-color: #ffffff;
+  padding: 0 20px;
+  box-shadow: 0px 8px 16px rgba(47, 90, 149, 0.05);
+  border-radius: 5px;
+  width: 95%;
+  margin-top: 10px;
+  border-left: 3px solid $yellow;
+
+  &:last-child {
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin: 10px;
+  }
+
+  &--name {
+    font-weight: 600;
+    font-size: 20px;
+    color: $dark-blue;
+  }
+
+  &--company {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
+  &--location, &--salary {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin-top: 5px;
+    color: #5e5e5e;
+
+    ion-icon {
+      margin-right: 5px;
+    }
+  }
+}

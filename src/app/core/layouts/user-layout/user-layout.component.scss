@@ -1,0 +1,6 @@
+@import 'src/app/shared/utilities/variables';
+
+
+::ng-deep .toolbar-background {
+  background-color: $dark-blue !important;
+}

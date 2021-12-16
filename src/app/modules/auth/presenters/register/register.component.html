@@ -1,0 +1,43 @@
+<header>
+  <h1 class='login--title'>Zarejestruj się</h1>
+</header>
+
+<form [formGroup]='form'>
+  <mat-form-field>
+    <mat-label>Imię</mat-label>
+    <input formControlName='name' matInput />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Nazwisko</mat-label>
+    <input formControlName='surname' matInput />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Telefon</mat-label>
+    <input formControlName='phone' matInput />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input formControlName='email' type='email' matInput />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Hasło</mat-label>
+    <input formControlName='password' matInput [type]="hide ? 'password' : 'text'" />
+    <button
+      mat-icon-button
+      matSuffix
+      (click)='hide = !hide'
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]='hide'
+    >
+      <ion-icon [name]="hide ? 'eye-off' : 'eye'"></ion-icon>
+    </button>
+  </mat-form-field>
+
+  <button class='button button--rounded button--outline button--white' (click)='onRegister()' [routerLink]="['/auth']">
+    Zarejestruj się
+  </button>
+</form>

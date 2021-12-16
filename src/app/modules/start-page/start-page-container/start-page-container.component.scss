@@ -1,0 +1,42 @@
+@import "src/app/shared/utilities/buttons";
+@import "src/app/shared/utilities/variables";
+
+:host {
+  background-image: url("../../../../assets/start-page-background.jpeg");
+}
+
+header {
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-page--title {
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 40px;
+  text-align: center;
+}
+
+.start-page--title--highlight {
+  color: $yellow;
+  font-weight: 600;
+}
+
+.start-page__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+
+  button {
+    width: 80%;
+    margin-top: 10px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

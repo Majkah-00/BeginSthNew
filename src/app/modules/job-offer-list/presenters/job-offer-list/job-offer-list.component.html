@@ -1,0 +1,14 @@
+<!--<ion-content>-->
+  <div class="job-offer__tile" *ngFor="let jobOffer of mockedData">
+    <p class="job-offer__tile--name">{{ jobOffer.jobOfferName }}</p>
+    <p class="job-offer__tile--company">{{ jobOffer.company }}</p>
+    <p class="job-offer__tile--location">
+      <ion-icon name="navigate"></ion-icon>
+      {{ jobOffer.location }}
+    </p>
+    <p class="job-offer__tile--salary">
+      <ion-icon name="cash"></ion-icon>
+      {{ jobOffer.salary.from }} - {{ jobOffer.salary.to }} zł
+    </p>
+  </div>
+<!--</ion-content>-->

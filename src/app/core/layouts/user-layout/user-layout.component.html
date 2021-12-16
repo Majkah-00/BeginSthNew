@@ -1,0 +1,45 @@
+<ion-menu side="start" menuId="first" contentId="main">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Start Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-tabs id="main">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button auto-hide="false"></ion-menu-button>
+      </ion-buttons>
+
+      <ion-title>Standard</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="my-profile">
+      <ion-icon name="person-circle"></ion-icon>
+      <ion-label>Mój profil</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="job-offers">
+      <ion-icon name="bag-outline"></ion-icon>
+      <ion-label>Oferty pracy</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="about">
+      <ion-icon name="add-outline"></ion-icon>
+      <ion-label>Dodaj ofertę pracy</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

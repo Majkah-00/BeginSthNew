@@ -1,0 +1,25 @@
+@import './variables';
+
+.button {
+  border: 0;
+  background: none;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+
+  &--rounded {
+    border-radius: 50px;
+  }
+
+  &--outline {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+  }
+
+  &--white {
+    background-color: #ffffff;
+    color: $dark-blue;
+  }
+}
+

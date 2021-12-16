@@ -1,0 +1,14 @@
+@import "./variables";
+
+.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element,
+.mat-checkbox:active:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element {
+  background: $yellow !important;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background: $yellow !important;
+}
+
+.mat-checkbox-frame {
+  border-color: #ffffff;
+}
