@@ -5,7 +5,7 @@ import { RegisterContainerComponent } from './containers/register-container/regi
 
 const routes: Routes = [
   {path: '', component: LoginContainerComponent},
-  {path: 'register', component: RegisterContainerComponent}
+  {path: 'register', component: RegisterContainerComponent},
 ];
 
 @NgModule({

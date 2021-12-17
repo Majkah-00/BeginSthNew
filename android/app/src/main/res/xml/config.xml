@@ -3,7 +3,7 @@
   <access origin="*" />
   
   <feature name="Fingerprint">
-    <param name="android-package" value="de.niklasmerz.cordova.fingerprint.Fingerprint"/>
+    <param name="android-package" value="de.niklasmerz.cordova.biometric.Fingerprint"/>
   </feature>
 
   

@@ -30,7 +30,6 @@ import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
       logOnly: environment.production,
     }),
     HttpClientModule,
-    // FingerprintAIO
   ],
   // @ts-ignore
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, FingerprintAIO],
