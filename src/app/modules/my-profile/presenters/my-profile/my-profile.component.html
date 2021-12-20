@@ -1,38 +1,43 @@
 <div class='my-profile'>
   <h2>Mój profil</h2>
-  <button type='button' class='edit-icon'><mat-icon>edit</mat-icon></button>
-  <img src='assets/profile.jfif'>
-  <div class='informations'>
-    <p>Imie</p>
-    <form [formGroup]='form'>
+  <button type='button' class='edit-icon'>
+    <mat-icon>edit</mat-icon>
+  </button>
+
+
+  <div class='photo'>
+    <img [src]="photo || 'assets/profile.jfif'">
+    <button type='button' class='add-photo' (click)='onTakePhoto()'>+</button>
+  </div>
+
+  <form [formGroup]='form'>
+    <div class='information'>
+      <p>Imię</p>
       <mat-form-field>
         <input formControlName='name' matInput />
       </mat-form-field>
-    </form>
-  </div>
-  <div class='informations'>
-    <p>Nazwisko</p>
-    <form [formGroup]='form'>
+    </div>
+
+    <div class='information'>
+      <p>Nazwisko</p>
       <mat-form-field>
         <input formControlName='surname' matInput />
       </mat-form-field>
-    </form>
-  </div>
-  <div class='informations'>
-    <p>Email</p>
-    <form [formGroup]='form'>
+    </div>
+
+    <div class='information'>
+      <p>Email</p>
       <mat-form-field>
         <input formControlName='email' matInput />
       </mat-form-field>
-    </form>
-  </div>
-    <div class='informations'>
-    <p>Telefon</p>
-  <form [formGroup]='form'>
-    <mat-form-field>
-      <input formControlName='phone' matInput />
-    </mat-form-field>
+    </div>
+
+    <div class='information'>
+      <p>Telefon</p>
+      <mat-form-field>
+        <input formControlName='phone' matInput />
+      </mat-form-field>
+    </div>
   </form>
-  </div>
 </div>
-<button type='button' class='add-photo'>+</button>
+

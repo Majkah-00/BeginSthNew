@@ -13,7 +13,7 @@ import { environment } from '../environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule } from '@angular/common/http';
 import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
-
+import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,7 +32,7 @@ import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
     HttpClientModule,
   ],
   // @ts-ignore
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, FingerprintAIO],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, FingerprintAIO, AndroidPermissions],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

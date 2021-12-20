@@ -13,17 +13,38 @@
   color: white;
 }
 
-img {
-  border-radius: 50%;
+.photo {
+  position: relative;
   width: 60%;
+
+  img {
+    border-radius: 50%;
+    display: block;
+  }
+
+  .add-photo {
+    width: 45px;
+    height: 45px;
+    background-color: #3dc2ff;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    color: #ffffff;
+  }
 }
 
-.informations {
+form {
+  width: 100%;
+}
+
+.information {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 25px;
+
   mat-form-field {
     width: 90%;
   }
@@ -33,17 +54,3 @@ img {
   padding: 0;
 }
 
-.add-photo {
-  width: 45px;
-  height: 45px;
-  background-color: #3dc2ff;
-  border-radius: 50%;
-  position: absolute;
-  left: 250px;
-  top: 200px;
-  color: white;
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
