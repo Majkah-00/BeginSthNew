@@ -1,0 +1,44 @@
+<div class="title">
+<h3>Stwórz swoją ofertę pracy</h3>
+<p>Podaj dane dotyczące twojej oferty</p>
+</div>
+<form [formGroup]='form'>
+  <div class="inputs">
+    <mat-form-field>
+      <mat-label>Stanowisko</mat-label>
+      <input formControlName='jobOfferName' matInput />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Firma</mat-label>
+      <input formControlName='company' matInput />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Miejsce pracy</mat-label>
+      <input formControlName='location' matInput />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Telefon</mat-label>
+      <input formControlName='phone' matInput />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Stawka od</mat-label>
+      <input formControlName='salaryFrom' type='number' matInput />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Stawka do</mat-label>
+      <input formControlName='salaryTo' type='number' matInput />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Opis pracy</mat-label>
+      <textarea formControlName="jobDescription" matInput></textarea>
+    </mat-form-field>
+
+    <button type="button" (click)='onAddJobOffer()'>Dodaj ofertę</button>
+  </div>
+</form>

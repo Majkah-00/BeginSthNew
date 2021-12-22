@@ -10,6 +10,7 @@ import { appReducer } from './app.reducer';
 import { CustomRouterStateSerializer } from './state-utiles';
 import { environment } from '../../../environments/environment';
 import { AuthEffects } from '../../modules/auth/store/effects/auth.effects';
+import { JobOfferEffect } from '../job-offer/store/effects/job-offer.effect';
 
 // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
@@ -23,7 +24,7 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
     CommonModule,
     StoreRouterConnectingModule.forRoot(),
     StoreModule.forRoot(appReducer, { metaReducers }),
-    EffectsModule.forRoot([AuthEffects]),
+    EffectsModule.forRoot([AuthEffects, JobOfferEffect]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   declarations: [],
