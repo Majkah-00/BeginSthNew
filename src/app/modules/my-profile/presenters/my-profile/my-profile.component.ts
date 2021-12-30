@@ -1,22 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Camera } from '@ionic-native/camera/ngx';
+import { User } from '../../../../shared/models/user.model';
 
 @Component({
   selector: 'app-my-profile',
   templateUrl: './my-profile.component.html',
-  styleUrls: ['./my-profile.component.scss'],
+  styleUrls: ['./my-profile.component.scss']
 })
 export class MyProfileComponent implements OnInit {
+  @Input() set user(userData: User) {
+    this.form.patchValue(userData);
+  };
+  @Output() saveUser = new EventEmitter();
+
   photo: any;
 
   form = this.fb.group({
+    userId:[null],
     email: [''],
     name: [''],
     surname: [''],
     phone: ['']
   });
-  constructor(private fb: FormBuilder, private camera: Camera) { }
+
+  constructor(private fb: FormBuilder, private camera: Camera) {
+  }
 
   ngOnInit() {
     this.form.disable();
@@ -35,5 +44,14 @@ export class MyProfileComponent implements OnInit {
     }).catch(error => {
       console.log(error);
     });
+  }
+
+  onToggleEdit(): void {
+    if (this.form.disabled) {
+      this.form.enable();
+    } else {
+      this.form.disable();
+      this.saveUser.emit(this.form.value);
+    }
   }
 }

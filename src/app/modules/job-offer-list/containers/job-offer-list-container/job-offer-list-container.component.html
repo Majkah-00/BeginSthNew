@@ -1,3 +1,5 @@
 <ion-content>
-  <app-job-offer-list></app-job-offer-list>
+  <app-job-offer-list
+  [jobOffers]='jobOffers$ | async'
+  ></app-job-offer-list>
 </ion-content>

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { JobOffer } from '../../domain/jobOffer.interface';
+import { JobOffer } from '../../domain/job-offer.interface';
 import { ToastController } from '@ionic/angular';
 
 @Component({
@@ -14,7 +14,7 @@ export class CreateJobOfferComponent implements OnInit {
   form = this.fb.group({
     jobOfferName: ['', Validators.required],
     company: ['', Validators.required],
-    location: ['', Validators.required],
+    city: ['', Validators.required],
     phone: ['', Validators.required],
     salaryFrom: ['', Validators.required],
     salaryTo: ['', Validators.required],

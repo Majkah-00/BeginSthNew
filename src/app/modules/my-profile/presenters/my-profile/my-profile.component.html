@@ -1,7 +1,7 @@
 <div class='my-profile'>
   <h2>Mój profil</h2>
-  <button type='button' class='edit-icon'>
-    <mat-icon>edit</mat-icon>
+  <button type='button' class='edit-icon' (click)='onToggleEdit()'>
+    <mat-icon>{{form.disabled ? 'edit' : 'save'}}</mat-icon>
   </button>
 
 

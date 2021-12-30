@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { JobOffer } from '../../../../modules/create-job-offer/domain/jobOffer.interface';
+import { JobOffer } from '../../../../modules/create-job-offer/domain/job-offer.interface';
 
 
 export const createJobOffer = createAction(
@@ -29,4 +29,19 @@ export const loadJobOffersSuccess = createAction(
 export const loadJobOffersFailure = createAction(
   '[LoadJobOfferFailure] LoadJobOfferFailure',
   props<{ error: string }>()
+);
+
+export const getJobOffer = createAction(
+  '[GetJobOffer] GetJobOffer',
+  props<{ id: number }>()
+);
+
+export const getJobOfferSuccess = createAction(
+  '[GetJobOffer] GetJobOffer Success',
+  props<JobOffer>()
+);
+
+export const getJobOfferFailure = createAction(
+  '[GetJobOffer] GetJobOfferFailure',
+  props<{error: string}>()
 );

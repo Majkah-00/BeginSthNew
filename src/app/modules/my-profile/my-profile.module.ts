@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { CameraPreview } from '@awesome-cordova-plugins/camera-preview/ngx';
 import { Camera } from '@ionic-native/camera/ngx';
+import '../../core/extensions/string.formater';
 
 @NgModule({
   declarations: [MyProfileContainerComponent, MyProfileComponent],

@@ -1,16 +1,16 @@
 <ion-menu side="start" menuId="first" contentId="main">
   <ion-header>
     <ion-toolbar color="primary">
-      <ion-title>Start Menu</ion-title>
+      <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
     <ion-list>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
-      <ion-item>Menu Item</ion-item>
+      <ion-menu-toggle>
+      <ion-item [routerLink]="'/about/about-app'">O aplikacji</ion-item>
+      <ion-item [routerLink]="'/about/about-author'">O autorze</ion-item>
+      <ion-item [routerLink]="'/about/rules'">Regulamin</ion-item>
+        </ion-menu-toggle>
     </ion-list>
   </ion-content>
 </ion-menu>

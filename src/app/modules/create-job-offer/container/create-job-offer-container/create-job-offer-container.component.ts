@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { JobOffer } from '../../domain/jobOffer.interface';
+import { JobOffer } from '../../domain/job-offer.interface';
 import { JobOfferFacade } from '../../../../shared/job-offer/store/job-offer.facade';
 
 @Component({

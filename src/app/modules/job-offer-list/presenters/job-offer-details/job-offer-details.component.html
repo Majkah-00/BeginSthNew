@@ -1,0 +1,15 @@
+<p class='title'>
+  Szczegoly wybranej oferty
+</p>
+<div class='content' *ngIf='jobOffer'>
+  <p><span>Stanowisko:</span> {{jobOffer.jobOfferName}}</p>
+  <p><span>Miejsce pracy:</span> {{jobOffer.city}}</p>
+  <p><span>Firma:</span> {{jobOffer.company}}</p>
+  <p><span>Telefon:</span> {{jobOffer.phone}}</p>
+  <p><span>Stawka:</span> {{jobOffer.salaryFrom}}zl - {{jobOffer.salaryTo}}zl</p>
+  <p><span>Opis pracy:</span> {{jobOffer.jobDescription}}</p>
+</div>
+<div class='buttons'>
+  <button (click)='call()'>Zadzwon</button>
+  <button [routerLink]="'/job-offers'">Powrot</button>
+</div>

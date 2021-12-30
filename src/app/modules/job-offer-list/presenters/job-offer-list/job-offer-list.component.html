@@ -1,16 +1,16 @@
 <!--<ion-content>-->
-  <div class="job-offer__tile" *ngFor="let jobOffer of mockedData">
-    <p class="job-offer__tile--name">{{ jobOffer.jobOfferName }}</p>
-    <p class="job-offer__tile--company">{{ jobOffer.company }}</p>
-    <p class="job-offer__tile--location">
-      <ion-icon name="navigate"></ion-icon>
-      {{ jobOffer.location }}
-    </p>
-    <p class="job-offer__tile--salary">
-      <ion-icon name="cash"></ion-icon>
-      {{ jobOffer.salary.from }} - {{ jobOffer.salary.to }} zł
-    </p>
-  </div>
+<div class='job-offer__tile' *ngFor='let jobOffer of jobOffers' (click)='jobOfferData(jobOffer.jobOfferId)'>
+  <p class='job-offer__tile--name'>{{ jobOffer.jobOfferName }}</p>
+  <p class='job-offer__tile--company'>
+    <ion-icon name="business-outline"></ion-icon>
+    {{ jobOffer.company }}</p>
+  <p class='job-offer__tile--location'>
+    <ion-icon name='navigate'></ion-icon>
+    {{ jobOffer.city }}
+  </p>
+  <p class='job-offer__tile--salary'>
+    <ion-icon name='cash'></ion-icon>
+    {{ jobOffer.salaryFrom }} - {{ jobOffer.salaryTo }} zł
+  </p>
+</div>
 <!--</ion-content>-->
-
-<button (click)="call()">Call</button>

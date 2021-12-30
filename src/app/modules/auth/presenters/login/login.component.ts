@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Login } from '../../domain/interfaces/login.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,9 +17,13 @@ export class LoginComponent {
     password: new FormControl('', Validators.required),
   });
 
+  constructor(private router: Router) {
+  }
+
   onLogin(): void {
     if (this.form.valid) {
       this.login.emit(this.form.value);
+      this.router.navigate(['/job-offers']);
     }
   }
 }

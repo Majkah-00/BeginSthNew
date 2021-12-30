@@ -29,6 +29,10 @@ const routes: Routes = [
         path: 'create-job-offer',
         loadChildren: () => import('./modules/create-job-offer/create-job-offer.module').then(((m)=>m.CreateJobOfferModule)),
       },
+      {
+        path: 'about',
+        loadChildren: () => import('./modules/about/about.module').then((m)=>m.AboutModule)
+      },
       { redirectTo: '/start', path: '**' },
     ],
   },

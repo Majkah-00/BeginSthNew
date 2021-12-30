@@ -7,12 +7,11 @@ import { JobOfferFacade } from '../../../../shared/job-offer/store/job-offer.fac
   styleUrls: ['./job-offer-list-container.component.scss'],
 })
 export class JobOfferListContainerComponent implements OnInit {
+  jobOffers$ = this.jobOfferFacade.jobOffers$;
 
   constructor(private jobOfferFacade: JobOfferFacade) { }
 
-  ngOnInit() {}
-
-  loadJobOffers(): void {
+  ngOnInit() {
     this.jobOfferFacade.loadJobOffers();
   }
 }

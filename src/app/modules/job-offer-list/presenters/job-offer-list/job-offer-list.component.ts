@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CallNumber } from '@awesome-cordova-plugins/call-number/ngx';
-import { JobOffer } from '../../../create-job-offer/domain/jobOffer.interface';
+import { JobOffer } from '../../../create-job-offer/domain/job-offer.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-job-offer-list',
@@ -8,74 +8,15 @@ import { JobOffer } from '../../../create-job-offer/domain/jobOffer.interface';
   styleUrls: ['./job-offer-list.component.scss']
 })
 export class JobOfferListComponent implements OnInit {
-  @Input() jobOffers: JobOffer;
+  @Input() jobOffers: JobOffer[];
 
-  mockedData = [
-    {
-      jobOfferName: 'Frontend developer',
-      company: 'Test sp.z.o.o',
-      location: 'Warszawa',
-      salary: {
-        from: 5000,
-        to: 10000
-      }
-    },
-    {
-      jobOfferName: 'Frontend developer',
-      company: 'Test sp.z.o.o',
-      location: 'Warszawa',
-      salary: {
-        from: 5000,
-        to: 10000
-      }
-    },
-    {
-      jobOfferName: 'Frontend developer',
-      company: 'Test sp.z.o.o',
-      location: 'Warszawa',
-      salary: {
-        from: 5000,
-        to: 10000
-      }
-    },
-    {
-      jobOfferName: 'Frontend developer',
-      company: 'Test sp.z.o.o',
-      location: 'Warszawa',
-      salary: {
-        from: 5000,
-        to: 10000
-      }
-    },
-    {
-      jobOfferName: 'Frontend developer',
-      company: 'Test sp.z.o.o',
-      location: 'Warszawa',
-      salary: {
-        from: 5000,
-        to: 10000
-      }
-    },
-    {
-      jobOfferName: 'Frontend developer',
-      company: 'Test sp.z.o.o',
-      location: 'Warszawa',
-      salary: {
-        from: 5000,
-        to: 10000
-      }
-    }
-  ];
-
-  constructor(private callNumber: CallNumber) {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
   }
 
-  call(): void {
-    this.callNumber.callNumber('18001010101', true)
-      .then(res => console.log('Launched dialer!', res))
-      .catch(err => console.log('Error launching dialer', err));
+  jobOfferData(offerId): void {
+    this.router.navigate([`/job-offers/${offerId}`]);
   }
 }

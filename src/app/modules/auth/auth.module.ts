@@ -13,6 +13,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
+import { HTTP } from '@ionic-native/http/ngx';
 
 @NgModule({
   declarations: [LoginContainerComponent, RegisterContainerComponent, LoginComponent, RegisterComponent],
@@ -27,7 +28,9 @@ import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
     IonicModule
   ],
   providers: [
-    FingerprintAIO
+    FingerprintAIO,
+    HTTP
+
   ]
 })
 export class AuthModule {}
