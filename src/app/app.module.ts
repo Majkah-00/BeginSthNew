@@ -14,6 +14,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule } from '@angular/common/http';
 import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
 import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions/ngx';
+import { HTTP } from '@ionic-native/http/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,7 +33,7 @@ import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions
     HttpClientModule,
   ],
   // @ts-ignore
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, FingerprintAIO, AndroidPermissions],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, FingerprintAIO, AndroidPermissions, HTTP],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

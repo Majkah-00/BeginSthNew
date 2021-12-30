@@ -1,4 +1,8 @@
 <ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
   <app-job-offer-list
   [jobOffers]='jobOffers$ | async'
   ></app-job-offer-list>

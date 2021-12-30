@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { JobOffer } from '../../../../modules/create-job-offer/domain/job-offer.interface';
-import { Observable } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
+import { HTTP } from '@ionic-native/http/ngx';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class JobOfferService {
     jobOffer: `${environment.apiUrl}/job-offer/{0}`
   };
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient, private http: HTTP) {
   }
 
   addJobOffer(jobOffer: JobOffer): Observable<JobOffer> {
@@ -24,17 +24,19 @@ export class JobOfferService {
   }
 
   loadJobOffers(): Observable<JobOffer[]> {
-    return this.httpClient.get<JobOffer[]>(this.endpoints.jobOffers).pipe(map((response) => {
-      response.map((row) => (row.id = row.jobOfferId));
-      return response;
-    }));
+    return from(this.http.get(`${environment.apiUrl}/job-offer`, {}, { 'Content-Type': 'application/json' })).pipe(
+      map(res => JSON.parse(res.data)),
+      map((response) => {
+        response.map((row) => (row.id = row.jobOfferId));
+        return response;
+      }));
   }
 
   getJobOffer(id: number): Observable<JobOffer> {
     return this.httpClient.get<JobOffer>(this.endpoints.jobOffer.format((String(id)))).pipe(
       map(response => ({
-          ...response
-        }))
+        ...response
+      }))
     );
   }
 }

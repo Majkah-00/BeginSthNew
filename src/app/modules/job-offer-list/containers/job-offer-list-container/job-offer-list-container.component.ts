@@ -14,4 +14,8 @@ export class JobOfferListContainerComponent implements OnInit {
   ngOnInit() {
     this.jobOfferFacade.loadJobOffers();
   }
+
+  doRefresh(event) {
+    this.jobOfferFacade.loadJobOffers();
+    event.target.complete();
 }

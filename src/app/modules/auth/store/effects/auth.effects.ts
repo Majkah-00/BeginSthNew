@@ -31,7 +31,7 @@ export class AuthEffects {
       switchMap((action) =>
         this.authService.login(action).pipe(
           map((user) => {
-            // this.router.navigate(['/job-offers']);
+            this.router.navigate(['/job-offers']);
             return actionFromAuth.loginSuccess(user);
           }),
           catchError((error) => of(actionFromAuth.loginFailure(error)))

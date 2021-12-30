@@ -23,7 +23,6 @@ export class LoginComponent {
   onLogin(): void {
     if (this.form.valid) {
       this.login.emit(this.form.value);
-      this.router.navigate(['/job-offers']);
     }
   }
 }

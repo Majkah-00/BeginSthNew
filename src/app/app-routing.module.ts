@@ -15,7 +15,7 @@ const routes: Routes = [
   {
     path: '',
     component: UserLayoutComponent,
-    // canActivate: [UserGuard],
+    canActivate: [UserGuard],
     children: [
       {
         path: 'job-offers',

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AlertController, ToastController, NavController } from '@ionic/angular';
 import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
+import { AuthFacade } from '../auth.facade';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,8 @@ export class AlertsService {
     private alertCtrl: AlertController,
     private toastController: ToastController,
     private navCtrl: NavController,
-    private faio: FingerprintAIO
+    private faio: FingerprintAIO,
+    private authFacade: AuthFacade
   ) {}
 
   async toastInfo(message) {
@@ -35,6 +37,12 @@ export class AlertsService {
             disableBackup: true,
           })
           .then((res: any) => {
+            // TODO temp solution
+            this.authFacade.login({
+              email: 'test@test.pl',
+              password: 'Haslo12@'
+            });
+
             this.navCtrl.navigateForward('/job-offers', { animated: true });
             return true;
           })
